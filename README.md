@@ -183,5 +183,3 @@ Long-term recommendations:
 6. Raise Microsoft SCL quarantine threshold
 
 ---
-
-Part of my SOC Analyst Home Lab portfolio. Built on Kali Linux with real-world phishing samples.
