@@ -1,0 +1,85 @@
+=============================================================
+STEP 5 — BLAST RADIUS ANALYSIS
+Analyst: Chandan Yadav
+Date: 2026-09-25
+=============================================================
+
+RECIPIENT ANALYSIS:
+-------------------
+To:  phishing@pot@outlook.com
+CC:  phishing@pot@outlook.com (same address — no BCC victims visible)
+BCC: None found in headers
+
+Note: The absence of BCC does not mean single target.
+Bulk phishing campaigns send individual emails per victim
+to avoid exposing recipient lists. URLscan confirmed
+704+ unique scans of the phishing page — proving mass targeting.
+
+SOCIAL ENGINEERING TECHNIQUES:
+-------------------------------
+Language:       German (targeting German-speaking users)
+Brand spoofed:  McAfee™ (trusted security software)
+Lure type:      Subscription expiry scam
+
+Urgency triggers used:
+[1] "24 Stunden" — 24-hour countdown timer
+[2] "Sofortiges Handeln erforderlich!" — Immediate action required
+[3] "Ihr Schutz ist ernsthaft gefährdet" — Protection seriously at risk
+[4] Expiry date: 15.05.2025 — creates false deadline
+[5] "95.99% OFF" — fake discount creates urgency to click
+
+Legitimacy tricks used:
+[1] Fake Account ID: 7246642DE
+[2] Fake Serial Number: Z9M1-EN2Y-ZPO6-KLRX
+[3] McAfee™ branding and red color scheme
+[4] Personalized with victim email address throughout
+[5] Fake copyright: © 2025 McAfee™. Alle Rechte vorbehalten
+[6] Unsubscribe link also points to phishing URL — both CTAs are traps
+
+CAMPAIGN TARGET PROFILE:
+-------------------------
+Target type:    German-speaking Microsoft Outlook users
+Target org:     Individual consumers (not corporate spearphishing)
+Campaign type:  Bulk/mass phishing — NOT targeted spearphishing
+Delivery:       Zapier automation — enables mass sending at scale
+
+ATTACKER OBJECTIVE:
+-------------------
+Primary goal:   Payment card harvesting
+Secondary goal: Credential theft (McAfee account login)
+Method:         Victim clicks "JETZT VERLÄNGERN" (Renew Now)
+                → Redirected to wheeltiefoot.com
+                → Fake cancellation/renewal page
+                → Victim enters credit card details to "renew"
+
+ESTIMATED REACH:
+----------------
+URLscan unique scans: 704 (each scan = one potential victim visit)
+Campaign scale:       BULK — thousands of emails sent
+Geographic target:    German-speaking countries (DE/AT/CH)
+Infrastructure:       Cloudflare CDN — designed for high traffic volume
+
+MITRE ATT&CK MAPPING:
+----------------------
+T1566.002 — Phishing: Spearphishing Link
+            Malicious URLs embedded in email body
+
+T1598     — Phishing for Information
+            Harvesting payment card details via fake renewal page
+
+T1036     — Masquerading
+            Impersonating McAfee brand with fake display name
+
+T1204.001 — User Execution: Malicious Link
+            Victim must click link for attack to succeed
+
+T1071.003 — Application Layer Protocol: Mail Protocols
+            Used SMTP via Zapier for delivery
+
+VERDICT:
+--------
+TRUE POSITIVE — Confirmed Bulk Phishing Campaign
+Target: German-speaking McAfee users
+Objective: Payment card and credential harvesting
+Scale: Mass campaign with 700+ confirmed victim interactions
+=============================================================

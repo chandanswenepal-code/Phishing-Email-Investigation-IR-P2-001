@@ -1,0 +1,182 @@
+=============================================================
+INCIDENT REPORT: IR-P2-001
+=============================================================
+Title:    Phishing Email — McAfee™ Subscription Scam
+          Credential & Payment Card Harvesting Campaign
+Date:     2026-09-26
+Analyst:  Chandan Yadav
+Team:     MustangShell
+Severity: HIGH
+Verdict:  TRUE POSITIVE — CONFIRMED PHISHING
+=============================================================
+
+EXECUTIVE SUMMARY
+-----------------
+A phishing email impersonating McAfee™ was received targeting
+German-speaking Microsoft Outlook users. The email used a fake
+subscription expiry lure with a 24-hour countdown to pressure
+victims into clicking malicious URLs. Full header analysis,
+SPF/DKIM/DMARC verification, and IOC investigation confirmed
+this is a bulk phishing campaign designed to harvest payment
+card details and credentials via a fake renewal page hosted
+on wheeltiefoot.com. The campaign has 704+ confirmed victim
+interactions on URLscan.io.
+
+=============================================================
+SAMPLE DETAILS
+=============================================================
+From (Display):    Mcafee™ <support@sweeterpasta.de>
+From (Spoofed):    Mcafee™ <support@mcafee.com>
+Return-Path:       msprvs1=nhtt6kv5j-pEA=bounces@sweeterpasta.de
+Message-ID:        g8WcnOgKiRw8PFFyshL59nCoHs@email.amazonses.com
+Originating IP:    4.227.1.199 (Microsoft Azure / Zapier)
+Sent Via:          ytzubumlnqpjz.zapier.com
+Subject:           Letzte Erinnerung: Verlängern Sie Ihr
+                   McAfee-Abonnement noch heute!
+Date Sent:         Mon, 19 May 2025 16:08:46 +0000
+Delivered To:      phishing@pot@outlook.com
+Total Hops:        4 (all Microsoft relay after Zapier entry)
+Lure:              Fake McAfee subscription expiry —
+                   24-hour urgency countdown + 95.99% discount
+
+=============================================================
+AUTHENTICATION FAILURES — PROOF OF SPOOF
+=============================================================
+SENDING DOMAIN: sweeterpasta.de
+  SPF:   FAIL — No SPF record exists for sweeterpasta.de
+  DKIM:  FAIL — No DKIM signature present (dkim=none)
+  DMARC: FAIL — No DMARC record exists for sweeterpasta.de
+
+IMPERSONATED DOMAIN: mcafee.com
+  SPF:   PASS — v=spf1 include:_spf.mcafee.com -all (strict)
+  DKIM:  PASS — Fully configured with selectors
+  DMARC: PASS — v=DMARC1; p=reject; sp=reject; fo=1
+
+VERDICT: The sending domain sweeterpasta.de has ZERO email
+authentication. McAfee's real domain enforces strict p=reject
+DMARC policy. This email violated mcafee.com's DMARC policy
+and was sent from an unauthorized, unauthenticated domain.
+
+ADDITIONAL HEADER RED FLAGS:
+  [1] From domain (sweeterpasta.de) ≠ claimed brand (mcafee.com)
+  [2] Sender field spoofed to show support@mcafee.com
+  [3] Message-ID domain is amazonses.com — not mcafee.com
+  [4] Return-Path points to sweeterpasta.de — not mcafee.com
+  [5] Email routed via Zapier automation — not McAfee servers
+  [6] Microsoft Antispam SCL score: 5 (flagged suspicious)
+
+=============================================================
+IOC ANALYSIS
+=============================================================
+MALICIOUS URLs:
+  URL 1: https://t.co/noqm4SZyTz (shortened — hides destination)
+         Redirects to: wheeltiefoot.com/o-rxgz-s96-...
+         VirusTotal: 0/96 (shortener masks true destination)
+
+  URL 2: https://t.co/YQ2EaF2AXJ (shortened — hides destination)
+         Redirects to: twitter.com/safety/unsafe_link_warning
+         Hidden dest:  hxzf4er.com (flagged unsafe by Twitter)
+
+MALICIOUS DOMAIN:
+  Domain:     wheeltiefoot.com
+  IPs:        172.237.146.39 / 172.67.200.123 (Cloudflare CDN)
+  VT Score:   3/90 — alphaMountain.ai: Malicious,
+              CRDF: Malicious, Fortinet: Malware
+  URLscan:    704 scans — confirmed bulk phishing campaign
+  Page title: "We are sorry to see you go"
+  Purpose:    Fake McAfee renewal page — payment card harvesting
+  TLS cert:   Issued April 2026 — freshly created for campaign
+
+SENDER IP:
+  IP:         4.227.1.199
+  ISP:        Microsoft Corporation (Azure — AS8075)
+  Location:   Phoenix, Arizona, USA
+  AbuseIPDB:  0% — not previously reported
+  Explanation: Attacker abused Zapier automation platform
+               (runs on Azure) to send bulk emails — making
+               sending IP appear trusted/legitimate
+
+=============================================================
+BLAST RADIUS
+=============================================================
+Target:         German-speaking Microsoft Outlook users
+Objective:      Payment card harvesting + credential theft
+Campaign type:  BULK mass phishing — NOT targeted spearphishing
+Language:       German — targeting DE/AT/CH regions
+Scale:          704+ confirmed victim page interactions
+Infrastructure: Cloudflare CDN — built for high traffic volume
+Delivery:       Zapier automation — enables mass sending at scale
+
+SOCIAL ENGINEERING TECHNIQUES:
+  [1] Brand impersonation — McAfee™ trusted security brand
+  [2] Urgency — "24 Stunden" countdown timer
+  [3] Fear — "Viren, Malware, Identitätsdiebstahl" threats
+  [4] False legitimacy — fake Account ID, Serial Number
+  [5] Fake discount — 95.99% OFF to incentivize clicking
+  [6] Personalization — victim email used throughout body
+  [7] Unsubscribe trap — both CTAs link to phishing page
+
+=============================================================
+MITRE ATT&CK MAPPING
+=============================================================
+T1566.002  Phishing: Spearphishing Link
+           Malicious URLs embedded in email body
+
+T1598      Phishing for Information
+           Harvesting payment card details via fake renewal page
+
+T1036      Masquerading
+           Impersonating McAfee™ with fake display name/branding
+
+T1204.001  User Execution: Malicious Link
+           Attack requires victim to click embedded URL
+
+T1071.003  Application Layer Protocol: Mail Protocols
+           Used SMTP via Zapier for bulk email delivery
+
+T1583.001  Acquire Infrastructure: Domains
+           Attacker registered wheeltiefoot.com for campaign
+
+=============================================================
+VERDICT & RECOMMENDATIONS
+=============================================================
+VERDICT: TRUE POSITIVE — Confirmed Bulk Phishing Campaign
+
+IMMEDIATE ACTIONS:
+  [1] Block sender domain sweeterpasta.de in email gateway
+  [2] Block sending IP 4.227.1.199 in email gateway
+  [3] Block domains wheeltiefoot.com and hxzf4er.com
+      in DNS firewall and web proxy
+  [4] Submit IOCs to MISP threat intelligence platform
+  [5] Submit wheeltiefoot.com to Google Safe Browsing
+  [6] Alert all users who may have received this campaign
+  [7] Reset credentials for any user who clicked the link
+  [8] Check payment card statements for unauthorized charges
+      if any user entered card details
+
+LONG-TERM RECOMMENDATIONS:
+  [1] Enforce SPF/DKIM/DMARC on organizational email domain
+  [2] Deploy email gateway with URL rewriting/sandboxing
+  [3] Implement security awareness training on phishing lures
+  [4] Block URL shorteners (t.co, bit.ly) in email gateway
+      or force expansion before delivery
+  [5] Configure DMARC reporting to detect spoofing attempts
+  [6] Raise Microsoft SCL threshold — SCL:5 should quarantine
+
+=============================================================
+EVIDENCE COLLECTED
+=============================================================
+  [x] suspicious_email.eml — Original phishing sample
+  [x] headers_extracted.txt — Parsed email headers
+  [x] step2_header_analysis.txt — Header analysis notes
+  [x] step3_spf_dkim_dmarc.txt — Authentication failure notes
+  [x] extracted_urls.txt — URLs extracted from email body
+  [x] step4_ioc_analysis.txt — Full IOC documentation
+  [x] step5_blast_radius.txt — Blast radius analysis
+  [x] email_body.txt — Decoded HTML email body
+  [x] 23 screenshots across all investigation steps
+
+=============================================================
+Analyst: Chandan Yadav | Team: MustangShell
+Report:  IR-P2-001 | Date: 2026-09-26
+=============================================================

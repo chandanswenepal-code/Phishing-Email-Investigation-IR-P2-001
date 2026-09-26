@@ -1,0 +1,59 @@
+=============================================================
+STEP 4 — IOC ANALYSIS
+Analyst: Chandan Yadav
+Date: 2026-09-25
+=============================================================
+
+EXTRACTED URLs:
+---------------
+URL 1: https://t.co/noqm4SZyTz
+       Redirects to: https://www.wheeltiefoot.com/o-rxgz-s96-ad86ba7e89da429d52f1930602033076
+       VirusTotal: 0/96 (t.co shortener — hides destination)
+       Destination VT: 3/90 — alphaMountain.ai: Malicious, CRDF: Malicious, Fortinet: Malware
+
+URL 2: https://t.co/YQ2EaF2AXJ
+       Redirects to: twitter.com/safety/unsafe_link_warning (Twitter flagged as UNSAFE)
+       Hidden destination: hxzf4er.com
+       VirusTotal: 0/92 — but Twitter safety system triggered warning
+
+URL 3: https://pbs.twimg.com/media/Ggaa8hfWQAAGfqp
+       Twitter CDN image — fake McAfee logo used in email body
+
+MALICIOUS DOMAIN ANALYSIS:
+---------------------------
+Domain:        wheeltiefoot.com
+IP:            172.237.146.39 / 172.67.200.123 (Cloudflare)
+VT Detection:  3/90 — Malicious (alphaMountain, CRDF, Fortinet)
+URLscan scans: 696 times — confirmed bulk phishing campaign
+Page title:    "We are sorry to see you go"
+Lure:          Fake McAfee subscription cancellation page
+Objective:     Credential/payment card harvesting
+TLS cert:      Issued April 2026 — freshly created for campaign
+Infrastructure: Cloudflare + Google + Amazon (distributed)
+
+SENDER IP ANALYSIS:
+-------------------
+Originating IP:  4.227.1.199
+ISP:             Microsoft Corporation (Azure)
+ASN:             AS8075
+Location:        Phoenix, Arizona, USA
+AbuseIPDB:       0% confidence — not previously reported
+Explanation:     Attacker used Zapier (runs on Azure) to send
+                 emails — making IP appear legitimate/trusted
+
+ATTACK CHAIN:
+-------------
+Attacker → Zapier (Azure IP 4.227.1.199)
+         → sweeterpasta.de (no SPF/DKIM/DMARC)
+         → Outlook (SCL:5 — suspicious but delivered to junk)
+         → Victim sees "McAfee™" display name
+         → Clicks t.co shortened URL
+         → Redirected to wheeltiefoot.com
+         → Fake cancellation page harvests payment/credentials
+
+CAMPAIGN SCALE:
+---------------
+URLscan hits:  704 total scans of wheeltiefoot.com
+               696 scans of the specific phishing path
+Verdict:       BULK PHISHING CAMPAIGN — not targeted/spearphishing
+=============================================================

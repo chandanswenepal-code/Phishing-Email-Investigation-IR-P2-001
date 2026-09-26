@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; ">
+    <div style="background-color: #fff; border: 1px solid #ddd; border-radius: 10px; width: 600px; padding: 0; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <div style="text-align: center; padding: 20px; background-color: #fffff; border-bottom: 1px solid #7f0000; position: relative; overflow: hidden;">
+      <div style="background:#fffffff;color:#ffffff;padding:0px;font-size:32px;font-weight:700;padding:20px;text-align: center"><a href="https://t.co/YQ2EaF2AXJ"><img src="https://pbs.twimg.com/media/Ggaa8hfWQAAGfqp?format=png&amp;name=small" width="300px"><br><img src="//pbs.twimg.com/media/Ggaa8hfWQAAGfqp?format=png&amp;name=small" width="300px"></div>
+            <div style="content: ''; position: absolute; top: 50%; left: 50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%); transform: translate(-50%, -50%); z-index: 0;"></div></a>
+        </div>
+        <div style="text-align: center; padding: 20px; background-color: #AF0707; color: #fff; font-size: 24px; font-weight: bold; border-bottom: 1px solid #c62828;">
+            Ihr McAfee-Abonnement ist abgelaufen
+        </div> 
+        <div style="background-color: #ffebee; color: #d32f2f; padding: 15px; text-align: center; font-weight: bold; border-bottom: 1px solid #ffcdd2; font-size: 18px;">
+            Dringend: Ihr Abonnement ist abgelaufen! Sie haben <span style="color: #c62828; font-weight: bold;">24 Stunden</span> um Ihren Schutz zu erneuern und aufrechtzuerhalten.
+        </div>
+        <div style="padding: 20px; text-align: center;">
+            <p style="margin: 15px 0; line-height: 1.6; font-size: 16px; color: #333;">Ihr Abonnement fr McAfee Comprehensive fr Windows ist abgelaufen am <strong>15.05.2025</strong>.</p>
+            <p style="margin: 15px 0; line-height: 1.6; font-size: 16px; color: #333;">Ohne Erneuerung, <strong>Ihre Gerte knnen anfllig fr Viren, Malware und Identittsdiebstahl werden.</strong></p>
+            <p style="color: #c62828; font-weight: bold; font-size: 16px;"><strong>Sofortiges Handeln erforderlich! Ihre Gerte sind ungeschtzt und gefhrdet...</strong></p>
+            <div style="background-color: #fafafa; border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
+            <a href="https://t.co/YQ2EaF2AXJ" style="text-decoration:none;color:#000000">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: bold; color: #555;">Konto-ID:</td>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: normal;"><strong>7246642DE</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: bold; color: #555;">Benutzer:</td>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: normal;"><strong>phishing@pot</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: bold; color: #555;">Seriennummer:</td>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: normal;">
+                            <span style="display: inline-block; padding: 6px 12px; border: 2px solid #ddd; border-radius: 6px; margin: 0 5px; background-color: #ffe0e0; font-family: monospace; font-weight: bold; color: #c62828;">Z9M1</span>
+                            <span style="display: inline-block; padding: 6px 12px; border: 2px solid #ddd; border-radius: 6px; margin: 0 5px; background-color: #ffe0e0; font-family: monospace; font-weight: bold; color: #c62828;">EN2Y</span>
+                            <span style="display: inline-block; padding: 6px 12px; border: 2px solid #ddd; border-radius: 6px; margin: 0 5px; background-color: #ffe0e0; font-family: monospace; font-weight: bold; color: #c62828;">ZPO6</span>
+                            <span style="display: inline-block; padding: 6px 12px; border: 2px solid #ddd; border-radius: 6px; margin: 0 5px; background-color: #ffe0e0; font-family: monospace; font-weight: bold; color: #c62828;">KLRX</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: bold; color: #555;">Rabatt:</td>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: normal;">
+                            <div style="display: inline-block; padding: 4px 12px; background-color: #c62828; color: #fff; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 0 10px rgba(0,0,0,0.3); position: relative; overflow: hidden; text-align: center;">
+                                <span style="position: relative; z-index: 1;">95.99% OFF</span>
+                                <div style="content: ''; position: absolute; top: -25px; right: -25px; width: 150%; height: 150%; background-color: #b71c1c; transform: rotate(-30deg); z-index: 0;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: bold; color: #555;">Angebot gltig bis:</td>
+                        <td style="padding: 12px; vertical-align: top; font-size: 16px; color: #333; font-weight: normal;"><strong>15.05.2025</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <a href="https://t.co/YQ2EaF2AXJ" style="display: inline-block; padding: 12px 25px; background-color: #d32f2f; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 20px; font-size: 18px; font-weight: bold;">JETZT VERLNGERN</a></a>
+            
+            <div style="font-size:18px;padding:10px;color:#000000" align="left">
+<p style="font-size: 16px;line-height: 1.5;margin-top: 20px;color:black">
+      Sehr geehrter phishing@pot,<br><br>
+      Trotz mehrfacher Benachrichtigungen und Warnungen haben wir keine Antwort erhalten. <strong>Ihr Schutz vor Cyberbedrohungen ist ernsthaft gefhrdet.</strong><br><br>
+      Erneuern Sie Ihr Abonnement umgehend, um einen ununterbrochenen Schutz vor Cyberangriffen und Hackern sicherzustellen. <strong>Ihre Sicherheit hat fr uns hchste Prioritt.</strong></p></div>
+        </div>
+        <div style="font-size:13px;background-color: #b71c1c; color: #fff; padding: 15px; text-align: center; border-radius: 0 0 0px 0px;">
+            <span style="font-size:10px;"></span> 2025 McAfee<span style="font-size:7px;">\u2122</span>. Alle Rechte vorbehalten<br>
+            <span style="font-size:10px;">Diese E-Mail wurde gesendet an: phishing@pot</span>
+            
+        </div>
+                    <div align="center" width="100%" style="font-family:Helvetica, Arial, sans-serif; font-size:10px; color:#202020; line-height:15px; padding-bottom:10px;">
+                <br>Wenn Sie keine weiteren E-Mails mehr erhalten mchten <a href="https://t.co/noqm4SZyTz" style="color:#000000;">Hier abmelden</a>
+                <br>
+            </div>
+    </div>
+
+</body>
+</html>
+

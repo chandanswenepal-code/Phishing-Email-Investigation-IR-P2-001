@@ -1,0 +1,38 @@
+=============================================================
+STEP 3 — SPF / DKIM / DMARC ANALYSIS
+Analyst: Chandan Yadav
+Date: 2026-09-24
+=============================================================
+
+SENDING DOMAIN: sweeterpasta.de
+-------------------------------
+SPF:   FAIL — No SPF Record found
+DKIM:  FAIL — No DKIM Record found (message not signed)
+DMARC: FAIL — No DMARC Record found
+
+IMPERSONATED DOMAIN: mcafee.com
+--------------------------------
+SPF:   PASS — v=spf1 include:_spf.mcafee.com -all (strict)
+DKIM:  PASS — Fully configured with selectors
+DMARC: PASS — v=DMARC1; p=reject; sp=reject; fo=1
+
+VERDICT:
+The phishing email was sent from sweeterpasta.de which has
+zero email authentication configured. The attacker deliberately
+chose this domain because it cannot be verified or blocked by
+SPF/DKIM/DMARC checks.
+
+McAfee's real domain (mcafee.com) has strict p=reject DMARC
+policy — meaning any legitimate mail server should have rejected
+this email. However the attacker exploited the fact that the
+sending domain (sweeterpasta.de) has no policy at all, allowing
+the email to slip through Microsoft's filters with an SCL score
+of 5 (suspicious but not blocked).
+
+PROOF OF SPOOF SUMMARY:
+[1] SPF:   sweeterpasta.de has NO SPF record
+[2] DKIM:  No DKIM signature present in email headers
+[3] DMARC: sweeterpasta.de has NO DMARC policy
+[4] mcafee.com has p=reject — this email violated it
+[5] Email routed via Zapier to bypass detection
+=============================================================

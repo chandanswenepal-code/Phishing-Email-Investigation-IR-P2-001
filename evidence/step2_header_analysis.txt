@@ -1,0 +1,30 @@
+=============================================================
+STEP 2 — EMAIL HEADER ANALYSIS
+Sample: suspicious_email.eml (McAfee Phishing)
+Analyst: Chandan Yadav
+Date: 2026-09-24
+=============================================================
+
+FROM (DISPLAY):   Mcafee™ <support@sweeterpasta.de>
+SENDER (SPOOFED): Mcafee™ <support@mcafee.com>
+RETURN-PATH:      msprvs1=nhtt6kv5j-pEA=bounces-ez4BoC-Te@sweeterpasta.de
+MESSAGE-ID:       g8WcnOgKiRw8PFFyshL59nCoHs@email.amazonses.com
+ORIGINATING IP:   4.227.1.199
+SENT VIA:         ytzubumlnqpjz.zapier.com (Zapier automation platform)
+TOTAL HOPS:       4
+
+RED FLAGS:
+[1] From domain (sweeterpasta.de) does NOT match claimed brand (mcafee.com)
+[2] Sender field spoofed to show support@mcafee.com
+[3] Message-ID domain is amazonses.com — not mcafee.com
+[4] DKIM: none — no cryptographic signature present
+[5] Return-Path points to sweeterpasta.de — not mcafee.com
+[6] Email routed through Zapier automation — not McAfee mail servers
+[7] Microsoft Antispam SCL score: 5 (flagged as suspicious)
+
+SPOOF VERDICT: CONFIRMED
+Return-Path matches From domain? NO
+Message-ID matches From domain? NO
+True originating IP: 4.227.1.199
+Relay through suspicious provider? YES — Zapier (zapier.com)
+=============================================================
